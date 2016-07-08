@@ -1,9 +1,11 @@
 //crearemos un modulo que sirve para crear y hacer cosas web con el modulo http
 var http = require("http");
 var fs = require('fs');
+var config = require("./config/config.js");
 //obteniendo informacion del entorno de ejecucion con respecto al ip y al puerto que debemos usar en nuestro server
-var PORT = process.env.PORT || 3000;
-var IP = process.env.IP || '127.0.0.1';
+//obteniendo las configuraciones del modulo de configuracion
+var PORT = config.PORT;
+var IP = config.IP;
 if(IP =='127.0.0.1'){
     console.log(">----EJECUTANTO EN MODO LOCAL----<")
 }
