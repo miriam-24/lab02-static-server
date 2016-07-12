@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/miriam-24/lab02-static-server#readme",
   "dependencies": {
-    "colors": "^1.1.2",
-    "mime": "^1.3.4"
+   
   }
 }

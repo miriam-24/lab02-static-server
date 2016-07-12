@@ -1,7 +1,10 @@
-//Cargas las librerias necesarias 
+//Cargar las librerias necesarias 
 //para crear mi servidor estatico
 var fs = require('fs'),
     config = require('../config/config.js')
+    //extension de internet original de correo electronico que permite usar el protocolo para el intercambio 
+    //de diferentes tipos de archivos de datos en internet.
+
 mime = require('mime');
 
 //Exortar la funcion de servidor estatico
