@@ -2,8 +2,8 @@
 var http = require("http");
 var fs = require('fs');
 var config = require("./config/config.js");
+var staticServer = require('./internals/static-server');
 var colors = require('colors');
-var staticServer = require('./internals/static-server')
 //obteniendo informacion del entorno de ejecucion con respecto al ip y al puerto que debemos usar en nuestro server
 //obteniendo las configuraciones del modulo de configuracion
 var PORT = config.PORT;
@@ -23,7 +23,7 @@ var server = http.createServer(function(req, res){
         //sirve el index
         url = "/index.html";
     }
-    console.log(('>URL Solicitada: ${URL} ...'.yellow));
+    console.log(('>URL Solicitada: ${url} ...'.green));
     //Sirvo la url con mi server statico:
     staticServer.serve(url, res);
 });
