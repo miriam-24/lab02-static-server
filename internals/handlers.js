@@ -1,4 +1,6 @@
 // Manejadores de rutas virtuales
+var fortune = require("./fortune");
+fortune.getFortune
 var fechaDeNacimiento = new Date(1992,10,22,1,45);
 module.exports = {
     "/edad/miriam-cruz" : function(req, res){
@@ -21,17 +23,24 @@ module.exports = {
     },
     //AGREGANDO OTRO METODO AL,OBJETO DE RUTAS
     "/getfortune": function(req ,res){
-        //SE OBTIENE EL MENSAJE DE LA SUERTE
-        var fortunePaper = {
-            "mensaje" :
-            "La honestidad es un regalo caro, no lo esperes de gente barata"
-        };
-        //SE CONFIGURA EL ENCABEZADO DE RESPUESTA HTTP
-        res.writeHead(200,{
-            "Content-type" :"application/json"
-        })
+        // // SE OBTIENE EL MENSAJE DE LA SUERTE
+        //var fortunePaper = {
+        //  "mensaje" :
+        //"La honestidad es un regalo caro, no lo esperes de gente barata"
+        //};
+        // SE CONFIGURA EL ENCABEZADO DE RESPUESTA HTTP
+        // res.writeHead(200,{
+        //    "Content-type" :"application/jason"
+        //});
         //PARSEANDO  STRING EL objetoRespuesta
-        var jsonResponse = JSON.stringify(fortunePaper);
+        //al estar en
+        //var jsonResponse = JSON.stringify(fortunePaper);
+        fortune.getFortune(function(fortunePaper){
+            //SE CONFIGURA EL ENCABEZADO DE RESPUESTA HTTP
+        res.writeHead(200,{
+            "Content-type" :"application/jason"
+        });
+    }); 
         //RESPONDEMOS AL OBJETO
         res.end(jsonResponse);
 
