@@ -3,7 +3,7 @@ var fortunePaper = {
     "La honestidad es un regalo caro, no lo esperes de gente barata"
 };
 module.exports = {
-    "getFortune" = function(cb){
+    "getFortune" : function(cb){
         //convirtiendo el fortunepaper de objeto a su version en string
         fortunePaper = JSON.strinify(fortunePaper);
         //Ejecuto el callback (cb) pasandole

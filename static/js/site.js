@@ -1,16 +1,19 @@
-function hola(){
-    sweetAlert("World Places",
-    "¡Bienevenido a esta pagina!");
-    document.body.style.backgroundColor = "lightseagreen"
-}
-function changeBkgColor(){
-    var color = document.body.style.backgroundColor;
-    console.log(">color original:" + color);
-    if(color == "lightseagreen"){
-    color = "honeydew";
-}else{
-    color = "lightseagreen";
-}
-console.log(">Cambiando el color a " + color);
-document.body.style.backgroundColor = color;
+function getFortuneFromServer(){
+    //REALIZANDO LA SOLICITUD GET EN AJAX
+    $.get("/getfortune", function(data, status){
+        //va a escribit en la pamtalla del cliente es un console del frontend
+        console.log(">" + typeof(data));
+        console.log(">Estatus de respuesta: " + estatus);
+        alert(data.mensaje);
+        swall({
+            title : "¡TU FORTUNA!",
+            text: data.mensaje,
+            imageUrl: "img/gl.jpg"
+        })
+
+    });
+
+   
+    
+
 }
