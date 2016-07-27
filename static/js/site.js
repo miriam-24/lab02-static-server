@@ -1,19 +1,17 @@
 function getFortuneFromServer(){
-    //REALIZANDO LA SOLICITUD GET EN AJAX
-    $.get("/getfortune", function(data, status){
-        //va a escribit en la pamtalla del cliente es un console del frontend
-        console.log(">" + typeof(data));
-        console.log(">Estatus de respuesta: " + estatus);
-        alert(data.mensaje);
-        swall({
-            title : "¡TU FORTUNA!",
-            text: data.mensaje,
+    // Realizando la solicitud get en AJAX
+    $.get("/getfortune","", function(data, status){
+        console.log("> " +  typeof(data));
+        console.log("> Estatus de respuesta: " + status);
+        swal({
+            title: "¡TU FORTUNA!",
+            text: data.Mensaje,
             imageUrl: "img/gl.jpg"
-        })
-
-    });
-
-   
-    
-
+        });
+    },"json");
 }
+
+$(document).ready(function () {
+    $('.parallax').parallax();
+    console.log("> Paralax Initialized...");
+});
